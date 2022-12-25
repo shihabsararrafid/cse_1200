@@ -1,0 +1,1 @@
+{"name":"Local: b","url":"c:\\Programming\\1200\\Marathon\\Marathon2\\b.cpp","tests":[{"id":1670555408562,"input":"4\nword\nlocalization\ninternationalization\npneumonoultramicroscopicsilicovolcanoconiosis\n","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Programming\\1200\\Marathon\\Marathon2\\b.cpp","group":"local","local":true}
