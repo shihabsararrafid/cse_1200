@@ -24,33 +24,31 @@ using namespace std;
 int main()
 {
     LetsGoCin();
-    int n;
-    cin >> n;
-    vector<ll> arr1(n);
-    vector<ll> arr2(n);
-    for (int i = 0; i < n; i++)
+    ll t;
+    cin >> t;
+    while (t--)
     {
-        cin >> arr1[i] >> arr2[i];
-    }
-    sort(arr1.begin(), arr1.end());
-    sort(arr2.begin(), arr2.end());
-    int ans = 0;
-    int c = 0;
-    for (int i = 0, j = 0; i < n && j < n;)
-    {
-        if (arr1[i] < arr2[j])
+        ll n;
+        cin >> n;
+        double l1 = log2(n);
+        ll l2 = log2(n);
+        if (n % 4 == 0)
         {
-           // cout << arr1[i] << " " << arr2[j] << endl;
-            c++;
-            i++;
+            cout << "YES\n";
+            for (int i = 2; i <= n; i += 2)
+                cout << i << " ";
+            ll cn = 0;
+            for (int i = 1; i < n - 2; i += 2)
+            {
+                cn++;
+                cout << i << " ";
+            }
+            cn++;
+            cout << n - 1 + cn << endl;
         }
         else
-        {
-            c--;
-            j++;
-        }
-        ans = max(c, ans);
-    }
-    cout << ans << endl;
+            cout << "NO\n";
+        // cout << l1 << " " << l2 << endl;
+    };
     baperBariJa();
 }

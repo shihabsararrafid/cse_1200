@@ -21,35 +21,32 @@ using namespace std;
 #define lp1(i, n) for (int i = 1; i <= n; i++)
 #define lp2(i, n) for (int i = 0; i < n; i++)
 #define prnt(a) cout << a
+string getBinary(ll t)
+{
+    string str;
+    while (t > 0)
+    {
+        int rem = t % 2;
+        char c = '0' + rem;
+        str.push_back(c);
+        t /= 2;
+    }
+    reverse(str.begin(), str.end());
+    return str;
+}
 int main()
 {
     LetsGoCin();
-    int n;
-    cin >> n;
-    vector<ll> arr1(n);
-    vector<ll> arr2(n);
-    for (int i = 0; i < n; i++)
-    {
-        cin >> arr1[i] >> arr2[i];
-    }
-    sort(arr1.begin(), arr1.end());
-    sort(arr2.begin(), arr2.end());
+    ll t;
+    cin >> t;
+    string res = getBinary(t);
     int ans = 0;
-    int c = 0;
-    for (int i = 0, j = 0; i < n && j < n;)
+    for (int i = 0; i < res.size(); i++)
     {
-        if (arr1[i] < arr2[j])
+        if (res[i] == '1')
         {
-           // cout << arr1[i] << " " << arr2[j] << endl;
-            c++;
-            i++;
+            ans++;
         }
-        else
-        {
-            c--;
-            j++;
-        }
-        ans = max(c, ans);
     }
     cout << ans << endl;
     baperBariJa();
