@@ -7,22 +7,25 @@ public class s {
         Integer n, q;
         n = sc.nextInt();
         q = sc.nextInt();
-        Vector<Long> v = new Vector<Long>(n);
+        long[] v = new long[n];
+        // Vector<Long> v = new Vector<Long>(n);
         for (int i = 0; i < n; i++) {
-            Long k = sc.nextLong();
-            v.add(k);
+            v[i] = sc.nextLong();
+
         }
-        Vector<Long> cumSum = new Vector<Long>(n + 1);
-        cumSum.add(0L);
+        // Vector<Long> cumSum = new Vector<Long>(n + 1);
+        long[] cumSum = new long[n + 1];
+        cumSum[0] = 0L;
         for (int i = 0; i < n; i++) {
-            cumSum.add(cumSum.get(i) + v.get(i));
+            // cumSum.add(cumSum.get(i) + v[i]);
+            cumSum[i + 1] = cumSum[i] + v[i];
         }
         for (int i = 1; i <= q; i++) {
 
             int a, b;
             a = sc.nextInt();
             b = sc.nextInt();
-            Long res = cumSum.get(b) - cumSum.get(a - 1);
+            Long res = cumSum[b] - cumSum[a - 1];
             System.out.println(res);
         }
     }
